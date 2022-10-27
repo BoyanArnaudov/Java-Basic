@@ -1,0 +1,36 @@
+package ForLoop.Excercise;
+
+import java.util.Scanner;
+
+public class CleverLilly {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int ageLilly = Integer.parseInt(input.nextLine());
+        double washingPrice = Double.parseDouble(input.nextLine());
+        int toyPrice = Integer.parseInt(input.nextLine());
+        int evenYears = 0, oddYears = 0, stealedMoney = 0, uvelichavane = 0, age = ageLilly;
+        double savedMoney = 0;
+
+        for (int i = 1; i <= ageLilly; i++){
+            if (age % 2 == 0){
+                evenYears ++;
+                for (int m = 1; m <= evenYears; m++){
+                    savedMoney += 10 ;
+                    uvelichavane += 10;
+                }
+                age--;
+            } else if (age % 2 == 1){
+                oddYears ++;
+                age--;
+            }
+        }
+        stealedMoney = evenYears;
+        savedMoney = savedMoney - stealedMoney + (toyPrice * oddYears);
+        if (washingPrice <= savedMoney){
+            System.out.printf("Yes! %.2f", savedMoney-washingPrice);
+        } else {
+            System.out.printf("No! %.2f", washingPrice - savedMoney);
+        }
+
+    }
+}
