@@ -1,0 +1,45 @@
+package ForLoop.Excercise;
+
+import java.util.Scanner;
+
+public class TrekkingMania {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int groups = Integer.parseInt(input.nextLine());
+        double peopleForMusala = 0, peopleForMonblan = 0, peopleForKilimandjaro = 0, peopleForK2 = 0, peopleForEverest = 0;
+        double totalPeople = 0;
+
+        for (int i = 1; i <= groups; i++){
+
+            int peoples = Integer.parseInt(input.nextLine());
+
+            if (peoples <= 5){
+                peopleForMusala += peoples;
+            }
+            if (peoples <= 12 && peoples >5) {
+                peopleForMonblan += peoples;
+            }
+            if (peoples <= 25 && peoples > 12) {
+                peopleForKilimandjaro += peoples;
+            }
+            if ( peoples <= 40 && peoples > 25) {
+                peopleForK2 += peoples;
+            }
+            if (peoples > 40) {
+                peopleForEverest += peoples;
+            }
+        }
+        totalPeople = peopleForMusala + peopleForMonblan + peopleForKilimandjaro + peopleForK2 + peopleForEverest;
+
+        peopleForMusala = peopleForMusala/totalPeople * 100;
+        peopleForMonblan = peopleForMonblan/totalPeople * 100;
+        peopleForKilimandjaro = peopleForKilimandjaro/totalPeople * 100;
+        peopleForK2= peopleForK2/totalPeople * 100;
+        peopleForEverest = peopleForEverest/totalPeople * 100;
+
+        System.out.printf("%.2f%%%n %.2f%%%n %.2f%%%n %.2f%%%n %.2f%%%n", peopleForMusala, peopleForMonblan,
+                peopleForKilimandjaro, peopleForK2, peopleForEverest);
+
+
+    }
+}
