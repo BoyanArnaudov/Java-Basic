@@ -1,0 +1,30 @@
+package ForLoop.Excercise;
+
+import java.util.Scanner;
+
+public class Oscars {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String actorName = input.nextLine();
+        double academyPoints = Double.parseDouble(input.nextLine());
+        int appraisals = Integer.parseInt(input.nextLine());
+        double points = 0;
+
+        for (int i = 1; i <= appraisals; i++){
+            String appName = input.nextLine();
+            double pointsApp = Double.parseDouble(input.nextLine());
+            points = points + ((appName.length() * pointsApp ) / 2);
+            if (points+academyPoints >= 1250.5){
+                break;
+            }
+
+        }
+        points += academyPoints;
+        if (points >= 1250.5){
+            System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", actorName, points);
+        } else {
+            System.out.printf("Sorry, %s you need %.1f more!", actorName, 1250.5-points);
+        }
+
+    }
+}
