@@ -1,0 +1,34 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class Logistic {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int tovari = Integer.parseInt(input.nextLine());
+        double pricePerTon = 0, totalTons = 0, tons3 = 0, tons4 = 0, tons12 = 0;
+
+
+        for (int i = 1; i <= tovari; i++){
+            int tons = Integer.parseInt(input.nextLine());
+            totalTons += tons;
+            if (tons <= 3){
+                pricePerTon = 200;
+                tons3 += tons;
+            }
+            if (tons >= 4 && tons < 12) {
+                pricePerTon = 175;
+                tons4 += tons;
+            }
+            if (tons >=12){
+                pricePerTon = 120;
+                tons12 += tons;
+            }
+        }
+        double  percentTon3 = tons3/totalTons * 100;
+        double  percentTon4 = tons4/totalTons * 100;
+        double percentTon12 = tons12/totalTons *100;
+        double totalPrice = (tons3 * 200 + tons4 * 175 + tons12 * 120)/totalTons;
+        System.out.printf("%.2f%n%.2f%%%n%.2f%%%n%.2f%%", totalPrice, percentTon3,percentTon4,percentTon12);
+    }
+}
