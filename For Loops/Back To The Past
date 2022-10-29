@@ -1,0 +1,27 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class BackToThePast {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double nasledstvo = Double.parseDouble(input.nextLine());
+        int years = Integer.parseInt(input.nextLine());
+        double money = nasledstvo;
+
+        for (int i = 1800; i <= years; i++){
+            if (i % 2 == 0){
+                money = money - 12000;
+            } else {
+                money = money - (12000 + ((i + 18 - 1800) * 50));
+            }
+        }
+
+        if (money < 0){
+            System.out.printf("He will need %.2f dollars to survive.", Math.abs(money));
+        } else  {
+            System.out.printf("Yes! He will live a carefree life and will have %.2f dollars left.", money);
+        }
+
+    }
+}
