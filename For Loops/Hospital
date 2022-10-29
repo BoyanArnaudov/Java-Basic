@@ -1,0 +1,28 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class Hospital {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int period = Integer.parseInt(input.nextLine());
+        int treatedPatient = 0, untreatedPatient = 0, doctors = 7;
+
+        for (int i = 1; i <= period; i++) {
+            int patients = Integer.parseInt(input.nextLine());
+            if (i % 3 == 0 && untreatedPatient > treatedPatient) {
+                doctors += 1;
+            }
+            if (patients < doctors) {
+                treatedPatient += patients;
+            }
+            else {
+                treatedPatient += doctors;
+                untreatedPatient += patients - doctors;
+            }
+        }
+        
+        System.out.printf("Treated patients: %d.%nUntreated patients: %d.", treatedPatient, untreatedPatient );
+        
+    }
+}
