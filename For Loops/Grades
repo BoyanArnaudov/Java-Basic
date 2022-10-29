@@ -1,0 +1,33 @@
+package ForLoop.Additional;
+import java.util.Scanner;
+public class Grades {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int students = Integer.parseInt(input.nextLine());
+        double totalgrade = 0;
+        double excellent = 0, veryGood = 0, good = 0, poor = 0;
+        for (int i = 1; i <= students; i++){
+            double grade = Double.parseDouble(input.nextLine());
+            totalgrade += grade;
+            if (grade < 3.00){
+                poor += 1;
+            }
+            if (grade >= 3.00 && grade < 4.00){
+                good +=1;
+            }
+            if (grade >= 4.00 && grade < 5.00) {
+                veryGood +=1;
+            }
+            if (grade >= 5.00){
+                excellent +=1;
+            }
+        }
+        double excellentStudent = excellent/students * 100;
+        double veryGoodStudent = veryGood/students * 100;
+        double goodStudent = good/students * 100;
+        double poorStudent = poor/students * 100;
+        double averageGrade = totalgrade/students;
+        System.out.printf("Top students: %.2f%%%nBetween 4.00 and 4.99: %.2f%%%nBetween 3.00 and 3.99: %.2f%%%n" +
+                "Fail: %.2f%%%nAverage: %.2f", excellentStudent, veryGoodStudent,goodStudent,poorStudent, averageGrade);
+    }
+}
