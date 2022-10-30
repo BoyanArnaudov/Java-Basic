@@ -1,0 +1,24 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class MonthIncome {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int months = Integer.parseInt(input.nextLine());
+        double water = 0, internet = 0;
+        double others = 0, power = 0;
+
+        for (int i = 1; i <= months; i++) {
+            double electricalBill = Double.parseDouble(input.nextLine());
+            others += ((electricalBill + 20 + 15) * 1.2);
+            water += 20;
+            internet += 15;
+            power += electricalBill;
+        }
+        double average = (power + water + internet + others)/months;
+
+        System.out.printf("Electricity: %.2f lv%nWater: %.2f lv%nInternet: %.2f lv%n", power, water, internet);
+        System.out.printf("Other: %.2f lv%nAverage: %.2f lv", others, average);
+    }
+}
