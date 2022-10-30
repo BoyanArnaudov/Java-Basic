@@ -1,0 +1,38 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class IntervalGame {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int moves = Integer.parseInt(input.nextLine());
+        double to9 = 0, to19 = 0, to29=0, to39=0, to50=0, invalid=0, total=0;
+
+        for (int i = 1; i <= moves; i++) {
+            int interval = Integer.parseInt(input.nextLine());
+
+            if (interval >= 0 && interval <=9){
+                to9 ++;
+                total += interval * 0.2;
+            } else if (interval > 9 && interval <= 19){
+                to19 ++;
+                total += interval * 0.3;
+            } else if (interval > 19 && interval <= 29){
+                to29 ++;
+                total += interval * 0.4;
+            } else if (interval >29 && interval <= 39) {
+                to39 ++;
+                total += 50;
+            } else if (interval > 39 && interval <=50) {
+                to50 ++;
+                total += 100;
+            } else {
+                invalid ++;
+                total /= 2;
+            }
+        }
+        System.out.printf("%.2f%nFrom 0 to 9: %.2f%%%nFrom 10 to 19: %.2f%%%n",total, (to9/moves*100), (to19/moves*100));
+        System.out.printf("From 20 to 29: %.2f%%%nFrom 30 to 39: %.2f%%%nFrom 40 to 50: %.2f%%%n", (to29/moves*100), (to39/moves*100), (to50/moves*100));
+        System.out.printf("Invalid numbers: %.2f%%", invalid/moves*100);
+    }
+}
