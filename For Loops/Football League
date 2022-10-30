@@ -1,0 +1,32 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class FootballTournament {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int capacity = Integer.parseInt(input.nextLine());
+        int fans = Integer.parseInt(input.nextLine());
+        double A=0, B=0, V=0, G=0;
+
+        for (int i = 1; i <= fans; i++){
+            String sector = input.nextLine();
+            switch (sector) {
+                case "A":
+                    A++;
+                    break;
+                case "B":
+                    B++;
+                    break;
+                case "V":
+                    V++;
+                    break;
+                case "G":
+                    G++;
+                    break;
+            }
+        }
+        double pA = A/fans * 100, pB = B/fans * 100, pV = V/fans * 100, pG = G/fans * 100, percFans = (double) fans/capacity * 100;
+        System.out.printf("%.2f%%%n%.2f%%%n%.2f%%%n%.2f%%%n%.2f%%", pA, pB, pV, pG, percFans);
+    }
+}
