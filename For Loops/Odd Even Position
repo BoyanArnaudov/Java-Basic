@@ -1,0 +1,41 @@
+package ForLoop.Additional;
+
+import java.util.Scanner;
+
+public class OddEvenPosition {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int counter = Integer.parseInt(input.nextLine());
+        double oddSum = 0, oddMax = -2147483648, oddMin = 2147483647,
+                evenSum = 0, evenMax = -2147483648, evenMin = 2147483647;
+
+        for (int i = 1; i <= counter; i++ ){
+            double number = Double.parseDouble(input.nextLine());
+            if (i % 2 == 1) {
+                oddSum += number;
+                if (oddMin > number) {
+                    oddMin = number;
+                }
+                if (oddMax < number) {
+                    oddMax = number;
+                }
+            } else {
+                evenSum += number;
+                if (evenMin > number) {
+                    evenMin = number;
+                }
+                if (evenMax < number) {
+                    evenMax = number;
+                }
+            }
+        }
+        if (counter == 0){
+            System.out.printf("OddSum=%.2f,%nOddMin=No,%nOddMax=No,%nEvenSum=%.2f,%nEvenMin=No,%nEvenMax=No", oddSum, evenSum);
+        } else if (counter == 1) {
+            System.out.printf("OddSum=%.2f,%nOddMin=%.2f,%nOddMax=%.2f,%nEvenSum=%.2f,%nEvenMin=No,%nEvenMax=No", oddSum, oddMin, oddMax, evenSum);
+        } else {
+            System.out.printf("OddSum=%.2f,%nOddMin=%.2f,%nOddMax=%.2f,%nEvenSum=%.2f,%nEvenMin=%.2f,%nEvenMax=%.2f",
+                    oddSum,oddMin,oddMax,evenSum,evenMin,evenMax);
+        }
+    }
+}
