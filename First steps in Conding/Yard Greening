@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class JardGreening {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the amount of square meters: ");
+        double squares = input.nextDouble();
+        double price = squares * 7.61;
+        double discount = 0.18 ;
+        double totalDiscount = price * discount;
+        double totalPrice = price - totalDiscount;
+        System.out.println("The final price is: " + totalPrice);
+        System.out.println("The discount is: " + totalDiscount);
+
+    }
+}
