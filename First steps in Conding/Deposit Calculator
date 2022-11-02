@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class DepositCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double deposit = Double.parseDouble(input.nextLine());
+        double months = Double.parseDouble(input.nextLine());
+        double vatPerYear = Double.parseDouble(input.nextLine());
+        double profitPerYear = deposit * (vatPerYear /= 100);
+        double profitPerMonth = profitPerYear / 12;
+        double totalSum = deposit + (profitPerMonth * months);
+        System.out.println(totalSum);
+
+    }
+}
