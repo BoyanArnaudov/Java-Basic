@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class CocatenateData {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter amount of dog packets: ");
+        int dogPackets = Integer.parseInt(input.nextLine());
+        System.out.print("Enter ammount of cat packets: ");
+        int catPackets = Integer.parseInt(input.nextLine());
+        double dogTotal = dogPackets * 2.50;
+        double catTotal = catPackets * 4;
+        double total = dogTotal + catTotal;
+        System.out.println("Total cost is: " + total );
+
+
+    }
+}
