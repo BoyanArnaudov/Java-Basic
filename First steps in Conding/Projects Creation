@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ProjectsCreation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String archName = input.nextLine();
+        int projects = input.nextInt();
+        int workHour = projects * 3;
+        System.out.printf("The architect %s will need %d hours to complete %d project/s.", archName, workHour, projects);
+
+    }
+}
