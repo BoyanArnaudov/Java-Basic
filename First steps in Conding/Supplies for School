@@ -1,0 +1,23 @@
+package FirstStepInCoding.Exercise;
+
+import java.util.Scanner;
+
+public class SuppliesForSchool {
+    public static void main(String[] args) {
+        double pencilPrice = 5.80;
+        double markerPrice = 7.20;
+        double chemicalPrice = 1.20;
+
+        Scanner input = new Scanner(System.in);
+        int totalPencil = Integer.parseInt(input.nextLine());
+        int totalMarker = Integer.parseInt(input.nextLine());
+        int totalChemical = Integer.parseInt(input.nextLine());
+        double discount = Double.parseDouble(input.nextLine());
+
+        double totalDiscount = discount / 100;
+        double totalPrice = (pencilPrice*totalPencil) + (markerPrice*totalMarker) + (chemicalPrice*totalChemical);
+        double finalSum = totalPrice - (totalPrice * totalDiscount);
+
+        System.out.println(finalSum);
+    }
+}
