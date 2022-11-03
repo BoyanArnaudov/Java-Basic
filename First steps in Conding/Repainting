@@ -1,0 +1,28 @@
+package FirstStepInCoding.Exercise;
+
+import java.util.Scanner;
+
+public class Repainting {
+    public static void main(String[] args) {
+        double nylonPrice = 1.5;
+        double paintPrice = 14.50;
+        double razreditelPrice = 5.0;
+
+        Scanner input = new Scanner(System.in);
+        int requiredNylon = Integer.parseInt(input.nextLine());
+        int requiredPaint = Integer.parseInt(input.nextLine());
+        int requredRazreditel = Integer.parseInt(input.nextLine());
+        int hours = Integer.parseInt(input.nextLine());
+
+        double nylonTotalPrice = nylonPrice * (requiredNylon + 2);
+        double paintTotalPrice = paintPrice * (requiredPaint*1.1);
+        double razreditelTotalPrice = razreditelPrice * requredRazreditel;
+        double totalMaterials = nylonTotalPrice + paintTotalPrice + razreditelTotalPrice + 0.4;
+        double maistori = totalMaterials * 0.3;
+        double totalSumMaistori = maistori * hours;
+        double totalSum = totalSumMaistori + totalMaterials;
+
+        System.out.println(totalSum);
+
+    }
+}
