@@ -1,0 +1,21 @@
+package FirstStepInCoding.Exercise;
+
+import java.util.Scanner;
+
+public class FishTank {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int lenght = Integer.parseInt(input.nextLine());
+        int width = Integer.parseInt(input.nextLine());
+        int height = Integer.parseInt(input.nextLine());
+        double percent = Double.parseDouble(input.nextLine());
+
+        int volume = lenght * width * height;
+        double volumeLiters = 0.001 * volume;
+        double occupiedVolume = percent / 100;
+        double neededLiters = volumeLiters * (1 - occupiedVolume);
+        System.out.println(neededLiters);
+
+    }
+}
