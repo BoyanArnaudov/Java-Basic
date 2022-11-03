@@ -1,0 +1,23 @@
+package FirstStepInCoding.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class Fishland {
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+
+        double priceSkumriq = Double.parseDouble(input.nextLine());
+        double priceCaca = Double.parseDouble(input.nextLine());
+        double kgPalamud = Double.parseDouble(input.nextLine());
+        double kgSafrid = Double.parseDouble(input.nextLine());
+        double kgEels = Double.parseDouble(input.nextLine());
+
+        double pricePalamud = priceSkumriq * 1.6;
+        double priceSafrid = priceCaca * 1.80;
+        double priceEels = 7.50;
+
+        double totalPrice = (kgPalamud * pricePalamud) + (kgSafrid * priceSafrid) + (kgEels * priceEels);
+
+        System.out.printf("%.2f", totalPrice);
+    }
+}
