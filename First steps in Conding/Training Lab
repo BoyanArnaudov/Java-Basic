@@ -1,0 +1,21 @@
+package FirstStepInCoding.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class TrainingLab {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double w = Double.parseDouble(input.nextLine());
+        double h = Double.parseDouble(input.nextLine());
+
+        double realH = h - 1;
+        double tablesPerRow = Math.floor((realH * 100) / 70);
+        double rows = Math.floor((w * 100) / 120);
+        double totaltables = tablesPerRow * rows - 3 ;
+        int total = (int) totaltables;
+
+        System.out.println(total);
+
+    }
+}
