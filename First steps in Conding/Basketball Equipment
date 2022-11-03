@@ -1,0 +1,18 @@
+package FirstStepInCoding.Exercise;
+
+import java.util.Scanner;
+
+public class BasketballEquipment {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int inbox = Integer.parseInt(input.nextLine());
+
+        double sneakers = inbox - (inbox * 0.4);
+        double dress = sneakers - (sneakers * 0.2);
+        double ball = dress * 0.25;
+        double accessoaries = ball * 0.2;
+        double totalPrice = sneakers + dress + ball + accessoaries + inbox;
+
+        System.out.println(totalPrice);
+    }
+}
