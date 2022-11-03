@@ -1,0 +1,24 @@
+package FirstStepInCoding.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class HousePainting {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double x = Double.parseDouble(input.nextLine());
+        double y = Double.parseDouble(input.nextLine());
+        double h = Double.parseDouble(input.nextLine());
+
+        double frontAndRear = (x * x) + ((x * x) - 2.4);
+        double sides = ((x * y) - (1.5*1.5)) * 2;
+        double roofTriangle = 2 * ((x * h) / 2);
+        double roof = ((x * y) * 2) + roofTriangle;
+
+        double greenPaint = (frontAndRear + sides) / 3.4;
+        double redPaint = roof / 4.3;
+
+        System.out.printf("%.2f %n", greenPaint);
+        System.out.printf("%.2f", redPaint);
+    }
+}
