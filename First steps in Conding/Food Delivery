@@ -1,0 +1,22 @@
+package FirstStepInCoding.Exercise;
+
+import java.util.Scanner;
+
+public class FoodDelivery {
+    public static void main(String[] args) {
+
+        double chickenPrice = 10.35;
+        double fishPrice = 12.40;
+        double veganPrice = 8.15;
+
+        Scanner input = new Scanner(System.in);
+
+        int chicken = Integer.parseInt(input.nextLine());
+        int fish = Integer.parseInt(input.nextLine());
+        int vegan = Integer.parseInt(input.nextLine());
+
+        double total = (chickenPrice * chicken) + (fishPrice * fish) + (veganPrice * vegan);
+        double totalPrice = (total*0.2) + total + 2.50;
+        System.out.println(totalPrice);
+    }
+}
