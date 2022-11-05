@@ -1,0 +1,39 @@
+package ConditionalStatements.Exercise;
+
+import java.util.Scanner;
+
+public class ToyShop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double puzzle = 2.60;
+        double doll = 3;
+        double bear = 4.10;
+        double minion = 8.20;
+        double truck = 2;
+
+        double exPrice = Double.parseDouble(input.nextLine());
+        int quantPuzzle = Integer.parseInt(input.nextLine());
+        int quantDoll = Integer.parseInt(input.nextLine());
+        int quantBear = Integer.parseInt(input.nextLine());
+        int quantMinion = Integer.parseInt(input.nextLine());
+        int quantTruck = Integer.parseInt(input.nextLine());
+
+        double totalToys = quantPuzzle + quantDoll + quantBear + quantMinion + quantTruck;
+        double toysPrice = quantPuzzle * puzzle + quantDoll * doll + quantBear * bear + quantMinion * minion +
+                quantTruck * truck;
+        double rent = 0;
+
+        if (totalToys >= 50) {
+            toysPrice *= 0.75;
+        }
+
+        rent = toysPrice * 0.1;
+        toysPrice -= rent;
+
+        if (toysPrice >= exPrice){
+            System.out.printf("Yes! %.2f lv left.", toysPrice - exPrice);
+        } else
+            System.out.printf("Not enough money! %.2f lv needed.", exPrice - toysPrice);
+    }
+}
