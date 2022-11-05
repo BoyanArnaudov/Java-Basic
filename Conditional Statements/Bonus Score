@@ -1,0 +1,29 @@
+package ConditionalStatements.Exercise;
+
+import java.util.Scanner;
+
+public class BonusScore {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int points = Integer.parseInt(input.nextLine());
+        double bonus = 0;
+
+        if (points <= 100){
+            bonus += 5;
+        } else if (points > 1000) {
+            bonus = points * 0.1;
+        } else {
+            bonus = points * 0.2;
+        }
+
+        if (points % 2 == 0) {
+            bonus += 1;
+        }
+        if (points % 10 == 5) {
+            bonus += 2;
+        }
+        System.out.println(bonus);
+        System.out.println(bonus + points);
+
+    }
+}
