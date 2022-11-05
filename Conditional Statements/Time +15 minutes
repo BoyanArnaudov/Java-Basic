@@ -1,0 +1,30 @@
+package ConditionalStatements.Exercise;
+
+import java.util.Scanner;
+
+public class Time15Minutes {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int hours = Integer.parseInt(input.nextLine());
+        int minutes = Integer.parseInt(input.nextLine());
+
+        int totalMin = (hours * 60) + minutes + 15;
+
+        int totalHours = totalMin / 60;
+        int totalMinutes = totalMin % 60;
+
+        if (totalHours > 23){
+            totalHours -= 24;
+            if (totalMinutes < 10){
+                System.out.printf("%d:0%d", totalHours, totalMinutes);
+            }
+            else System.out.printf("%d:%d", totalHours, totalMinutes);
+        }
+        else {
+            if (totalMinutes < 10){
+                System.out.printf("%d:0%d", totalHours, totalMinutes);
+            }
+            else System.out.printf("%d:%d", totalHours, totalMinutes);
+        }
+    }
+}
