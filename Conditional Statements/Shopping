@@ -1,0 +1,31 @@
+package ConditionalStatements.Exercise;
+
+import java.util.Scanner;
+
+public class Shopping {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int videoPrice = 250;
+
+        double budget = Double.parseDouble(input.nextLine());
+        int videoCards = Integer.parseInt(input.nextLine());
+        int processors = Integer.parseInt(input.nextLine());
+        int ram = Integer.parseInt(input.nextLine());
+
+        double totalVideoCards = videoPrice * videoCards;
+        double totalProcc = (totalVideoCards * 0.35) * processors;
+        double totalRam = (totalVideoCards * 0.1) * ram;
+        double totalSum = totalVideoCards + totalRam + totalProcc;
+
+        if (videoCards > processors){
+            totalSum *= 0.85;
+        }
+
+        if (budget >= totalSum ) {
+            System.out.printf("You have %.2f leva left!", budget - totalSum);
+        } else
+            System.out.printf("Not enough money! You need %.2f leva more!", totalSum - budget);
+
+    }
+}
