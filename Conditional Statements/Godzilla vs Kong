@@ -1,0 +1,30 @@
+package ConditionalStatements.Exercise;
+
+import java.util.Scanner;
+
+public class GodzillaVSKong {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double budget = Double.parseDouble(input.nextLine());
+        int people = Integer.parseInt(input.nextLine());
+        double dress = Double.parseDouble(input.nextLine());
+
+        double decor = budget * 0.1;
+
+        if (people >= 150 ){
+            dress = dress * 0.9;
+
+        }
+
+        double sum = decor + (people * dress);
+
+        if (sum <= budget) {
+            System.out.println("Action!");
+            System.out.printf("Wingard starts filming with %.2f leva left.", budget - sum);
+        } else {
+            System.out.println("Not enough money!");
+            System.out.printf("Wingard needs %.2f leva more.", sum - budget);
+        }
+    }
+}
