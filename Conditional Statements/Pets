@@ -1,0 +1,27 @@
+package ConditionalStatements.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class Pets {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int days = Integer.parseInt(input.nextLine());
+        int food = Integer.parseInt(input.nextLine());
+        double foodPerDog = Double.parseDouble(input.nextLine());
+        double foodPerCat = Double.parseDouble(input.nextLine());
+        double foodPerTurtle = Double.parseDouble(input.nextLine());
+
+        double neededFood = ((days * foodPerDog) + (days * foodPerCat) + (days * foodPerTurtle/1000));
+
+        if (food >= neededFood){
+            double foodLeft = food - neededFood;
+            System.out.printf("%.0f kilos of food left.", Math.floor(foodLeft));
+
+        } else {
+            double foodLeft = neededFood - food;
+            System.out.printf("%.0f more kilos of food are needed.", Math.ceil(foodLeft));
+        }
+
+    }
+}
