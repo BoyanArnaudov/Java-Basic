@@ -1,0 +1,36 @@
+package ConditionalStatements.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class TransportPrice {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int km = Integer.parseInt(input.nextLine());
+        String time = input.nextLine();
+
+        double taxyDay = 0.7 + (0.79 * km);
+        double taxyNight = 0.7 + (0.9 * km);
+        double autobus = 0.09 * km;
+        double train = 0.06 * km;
+
+        if (time.equals("day")){
+            if (km < 20){
+                System.out.printf("%.2f", taxyDay);
+            } else if (km <100) {
+                System.out.printf("%.2f", autobus);
+            } else {
+                System.out.printf("%.2f", train);
+            }
+        }else {
+            if (km < 20){
+                System.out.printf("%.2f", taxyNight);
+            } else if (km <100) {
+                System.out.printf("%.2f", autobus);
+            } else {
+                System.out.printf("%.2f", train);
+            }
+        }
+
+    }
+}
