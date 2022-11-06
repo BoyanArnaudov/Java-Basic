@@ -1,0 +1,81 @@
+package ConditionalStatements.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class FuelTank2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String type = input.nextLine();
+        double fuelQuantity = Double.parseDouble(input.nextLine());
+        String card = input.nextLine();
+
+        double priceGasoline = 2.22;
+        double priceDiesel = 2.33;
+        double priceGas = 0.93;
+
+        double totalPrice = 0;
+
+        if (type.equals("Gas")){
+            if (card.equals("Yes")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * (priceGas - 0.08)) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * (priceGas - 0.08)) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * (priceGas - 0.08);
+                }
+            } else if (card.equals("No")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * priceGas ) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * priceGas) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * priceGas;
+                }
+            }
+        }
+
+        if (type.equals("Diesel")){
+            if (card.equals("Yes")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * (priceDiesel - 0.12)) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * (priceDiesel - 0.12)) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * (priceDiesel - 0.12);
+                }
+            } else if (card.equals("No")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * priceDiesel) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * priceDiesel) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * priceDiesel;
+                }
+            }
+        }
+
+        if (type.equals("Gasoline")){
+            if (card.equals("Yes")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * (priceGasoline - 0.18)) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * (priceGasoline - 0.18)) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * (priceGasoline - 0.18);
+                }
+            } else if (card.equals("No")) {
+                if (fuelQuantity > 20 && fuelQuantity <=25){
+                    totalPrice = (fuelQuantity * priceGasoline ) * 0.92;
+                } else if (fuelQuantity > 25) {
+                    totalPrice = (fuelQuantity * priceGasoline) * 0.90;
+                } else {
+                    totalPrice = fuelQuantity * priceGasoline;
+                }
+            }
+        }
+        System.out.printf("%.2f lv.", totalPrice);
+
+    }
+}
