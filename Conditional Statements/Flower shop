@@ -1,0 +1,31 @@
+package ConditionalStatements.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class FlowerShop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double magnolii = 3.25;
+        double ziumbiuli = 4;
+        double rose = 3.5;
+        double cactus = 8;
+        double danyk = 0.95;
+
+        int quanmagnolii = Integer.parseInt(input.nextLine());
+        int quanziumbiuli = Integer.parseInt(input.nextLine());
+        int quanrose = Integer.parseInt(input.nextLine());
+        int quancactus = Integer.parseInt(input.nextLine());
+        double giftPrice = Double.parseDouble(input.nextLine());
+
+        double totalPrice = ((magnolii * quanmagnolii) + (ziumbiuli * quanziumbiuli) + (rose * quanrose) +
+                (cactus * quancactus)) * danyk;
+
+        if (totalPrice >= giftPrice){
+            System.out.printf("She is left with %.0f leva.", Math.floor(totalPrice - giftPrice));
+        } else {
+            System.out.printf("She will have to borrow %.0f leva.", Math.ceil(giftPrice - totalPrice) );
+        }
+
+    }
+}
