@@ -1,0 +1,30 @@
+package ConditionalStatements.AdditionalTasks;
+
+import java.text.Format;
+import java.util.Scanner;
+
+public class PipesInThePool {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int capacity = Integer.parseInt(input.nextLine());
+        double flowFP = Double.parseDouble(input.nextLine());
+        double flowSP = Double.parseDouble(input.nextLine());
+        double hoursWM = Double.parseDouble(input.nextLine());
+
+        double firstPipe = hoursWM * flowFP;
+        double secondPipe = hoursWM * flowSP;
+        double totalPipe = hoursWM * (flowFP + flowSP);
+        double total;
+        double firstPipePercent = (firstPipe/totalPipe) * 100;
+        double secondPipePercent = (secondPipe/totalPipe) * 100;
+
+        if (totalPipe <= capacity) {
+            total = (totalPipe/capacity) * 100;
+            System.out.printf("The pool is %.2f%% full. Pipe 1: %.2f%%. Pipe 2: %.2f%%.", total, firstPipePercent, secondPipePercent);
+        } else {
+            System.out.printf("For %.2f hours the pool overflows with %.2f liters.", hoursWM, (totalPipe-capacity));
+        }
+
+    }
+}
