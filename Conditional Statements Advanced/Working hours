@@ -1,0 +1,17 @@
+package ConditionStatementsAdvanced;
+
+import java.util.Scanner;
+
+public class WorkingHours {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int hour = Integer.parseInt(input.nextLine());
+        String day = input.nextLine();
+
+        if ((hour >= 10) && (hour <= 18) && ((day.equals("Monday") || (day.equals("Tuesday") || (day.equals("Wednesday") || (day.equals("Thursday") || (day.equals("Friday") || (day.equals("Saturday"))))))))) {
+            System.out.println("open");
+        }else {
+            System.out.println("closed");
+        }
+    }
+}
