@@ -1,0 +1,71 @@
+package ConditionStatementsAdvanced.Lab;
+
+import java.util.Scanner;
+
+public class FruitShop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String fruit = input.nextLine();
+        String day = input.nextLine();
+        double quantity = Double.parseDouble(input.nextLine());
+        double banana, apple, orange, grapefruit, kiwi, pineapple, grapes;
+
+        if (day.equals("Monday") || day.equals("Tuesday") || day.equals("Wednesday") || day.equals("Thursday") || day.equals("Friday")){
+            switch (fruit){
+                case "banana": banana = quantity * 2.5;
+                    System.out.printf("%.2f", banana);
+                    break;
+                case "apple": apple = quantity * 1.2;
+                    System.out.printf("%.2f", apple);
+                    break;
+                case "orange": orange = quantity * 0.85;
+                    System.out.printf("%.2f", orange);
+                    break;
+                case "grapefruit": grapefruit = quantity * 1.45;
+                    System.out.printf("%.2f", grapefruit);
+                    break;
+                case "kiwi": kiwi = quantity * 2.70;
+                    System.out.printf("%.2f", kiwi);
+                    break;
+                case "pineapple": pineapple = quantity * 5.50;
+                    System.out.printf("%.2f", pineapple);
+                    break;
+                case "grapes": grapes = quantity * 3.85;
+                    System.out.printf("%.2f", grapes);
+                    break;
+                default:
+                    System.out.println("error");
+            }
+        }   else if (day.equals("Sunday") || day.equals("Saturday")){
+            switch (fruit){
+                case "banana": banana = quantity * 2.7;
+                    System.out.printf("%.2f", banana);
+                    break;
+                case "apple": apple = quantity * 1.25;
+                    System.out.printf("%.2f", apple );
+                    break;
+                case "orange": orange = quantity * 0.9;
+                    System.out.printf("%.2f", orange );
+                    break;
+                case "grapefruit": grapefruit = quantity * 1.6;
+                    System.out.printf("%.2f", grapefruit );
+                    break;
+                case "kiwi": kiwi = quantity * 3;
+                    System.out.printf("%.2f", kiwi);
+                    break;
+                case "pineapple": pineapple = quantity * 5.60;
+                    System.out.printf("%.2f", pineapple);
+                    break;
+                case "grapes": grapes = quantity * 4.20;
+                    System.out.printf("%.2f", grapes);
+                    break;
+                default:
+                    System.out.println("error");
+            }
+
+        } else {
+            System.out.println("error");
+        }
+
+    }
+}
