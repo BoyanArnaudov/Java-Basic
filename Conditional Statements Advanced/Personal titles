@@ -1,0 +1,28 @@
+package ConditionStatementsAdvanced;
+
+import java.util.Scanner;
+
+public class PersonalTitles {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double age = Double.parseDouble(input.nextLine());
+        String sex = input.nextLine();
+        if (age >= 16) {
+            if ((sex.equals("f"))){
+                System.out.println("Ms.");
+            }else {
+                System.out.println("Mr.");
+            }
+        }
+
+        if (age < 16){
+            if (sex.equals("f")){
+                System.out.println("Miss");
+            }else {
+                System.out.println("Master");
+            }
+
+        }
+    }
+}
