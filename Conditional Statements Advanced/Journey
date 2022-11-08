@@ -1,0 +1,41 @@
+package ConditionStatementsAdvanced.Exercise;
+
+import java.util.Scanner;
+
+public class Journey {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        String season = input.nextLine();
+        String destination = null;
+        double spendMoney = 0;
+        String where = null;
+
+        if (budget <=100) {
+            destination = "Bulgaria";
+            if (season.equals("summer")){
+                where = "Camp";
+                spendMoney = budget * 0.3;
+            } else if (season.equals("winter")) {
+                where = "Hotel";
+                spendMoney = budget * 0.7;
+            }
+        } else if (budget > 100 && budget <=1000) {
+            destination = "Balkans";
+            if (season.equals("summer")){
+                where = "Camp";
+                spendMoney = budget * 0.4;
+            } else if (season.equals("winter")) {
+                where = "Hotel";
+                spendMoney = budget * 0.8;
+            }
+
+        } else if (budget > 1000){
+            destination = "Europe";
+            where = "Hotel";
+            spendMoney = budget * 0.9;
+    }
+        System.out.printf("Somewhere in %s%n", destination);
+        System.out.printf("%s - %.2f", where, spendMoney);
+}
+}
