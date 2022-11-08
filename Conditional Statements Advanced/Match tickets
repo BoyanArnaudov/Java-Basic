@@ -1,0 +1,36 @@
+package ConditionStatementsAdvanced.AdditionalTasks;
+
+import java.util.Scanner;
+
+public class MatchTickets {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        String category = input.nextLine();
+        int people = Integer.parseInt(input.nextLine());
+        double ticketPrice = 0;
+        double totalPrice = 0;
+        if (category.equals("VIP")) {
+            ticketPrice = 499.99;
+        } else if (category.equals("Normal")) {
+            ticketPrice = 249.99;
+        }
+        if (people <=4){
+            totalPrice = (budget*0.75) + (people*ticketPrice);
+        } else if (people >=5 && people <= 9) {
+            totalPrice = (budget*0.6) + (people*ticketPrice);
+        } else if (people >=10 && people <= 24) {
+            totalPrice = (budget*0.5) + (people*ticketPrice);
+        } else if (people >=25 && people <=49) {
+            totalPrice = (budget*0.4) + (people*ticketPrice);
+        } else if (people >=50) {
+            totalPrice = (budget*0.25) + (people*ticketPrice);
+        }
+        if (totalPrice <= budget){
+            System.out.printf("Yes! You have %.2f leva left.", budget - totalPrice);
+        } else {
+            System.out.printf("Not enough money! You need %.2f leva.", totalPrice - budget);
+        }
+
+    }
+}
