@@ -1,0 +1,22 @@
+package ConditionStatementsAdvanced.Exercise;
+
+import java.util.Scanner;
+
+public class Cinema {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String projection = input.nextLine();
+        int rows = Integer.parseInt(input.nextLine());
+        int col = Integer.parseInt(input.nextLine());
+        double income = rows * col;
+
+        if (projection.equals("Premiere")){
+            income *= 12;
+        } else if (projection.equals("Normal")) {
+            income *= 7.5;
+        } else if (projection.equals("Discount")){
+            income *= 5;
+        }
+        System.out.printf("%.2f leva", income);
+    }
+}
