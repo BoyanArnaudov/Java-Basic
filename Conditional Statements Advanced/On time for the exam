@@ -1,0 +1,48 @@
+package ConditionStatementsAdvanced.Exercise;
+
+import java.util.Scanner;
+
+public class OnTimeForTheExam {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int hourExam = Integer.parseInt(input.nextLine());
+        int minutesExam = Integer.parseInt(input.nextLine());
+        int hourArrive = Integer.parseInt(input.nextLine());
+        int minutesArrive = Integer.parseInt(input.nextLine());
+
+        int totalExam = (hourExam * 60) + minutesExam;
+        int totalArrive = (hourArrive * 60) + minutesArrive;
+        int sumHour;
+        int sumMinutes;
+        if (totalArrive > totalExam){
+            sumHour = (totalArrive - totalExam) / 60;
+            sumMinutes = (totalArrive - totalExam) % 60;
+            System.out.printf("Late%n");
+            if (sumHour >= 1){
+                if (sumMinutes < 9) {
+                    System.out.printf("%d:0%d hours after the start", sumHour, sumMinutes);
+                } else System.out.printf("%d:%d hours after the start", sumHour, sumMinutes);
+            } else {
+                System.out.printf("%d minutes after the start", sumMinutes);
+            }
+        } else {
+            sumHour = (totalExam - totalArrive) / 60;
+            sumMinutes = (totalExam - totalArrive) % 60;
+            if ((totalExam - totalArrive) <=30) {
+                System.out.printf("On time%n");
+                System.out.printf("%d minutes before the start", sumMinutes);
+            } else {
+                System.out.printf("Early%n");
+                if (sumHour >= 1){
+                    if (sumMinutes < 9) {
+                        System.out.printf("%d:0%d hours before the start", sumHour, sumMinutes);
+                    } else System.out.printf("%d:%d hours before the start", sumHour, sumMinutes);
+                } else {
+                    System.out.printf("%d minutes before the start", sumMinutes);
+                }
+            }
+        }
+
+
+    }
+}
