@@ -1,0 +1,29 @@
+package WhileLoop.Lab;
+
+import java.util.Scanner;
+
+public class AccountBalance {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double balance = 0, income = 0;
+        String money = "zahar" ;
+        while (!money.equals("NoMoreMoney")) {
+            money = input.nextLine();
+            if (!money.equals("NoMoreMoney")) {
+                income = Double.parseDouble(money);
+            } else
+                break;
+            if (income < 0) {
+                break;
+            }
+            balance += income;
+            System.out.printf("Increase: %.2f%n", income);
+        }
+        if (income < 0){
+            System.out.println("Invalid operation!");
+
+        }
+        System.out.printf("Total: %.2f", balance);
+
+    }
+}
