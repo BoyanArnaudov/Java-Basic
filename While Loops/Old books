@@ -1,0 +1,27 @@
+package WhileLoop.Exercise;
+
+import java.util.Scanner;
+
+public class oldBooks {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String searchBook = input.nextLine();
+        String searchedBook = null;
+        boolean condition = true;
+        int bookCounter = 0;
+        while (condition) {
+            searchedBook = input.nextLine();
+            if (searchBook.equals(searchedBook) || searchedBook.equals("No More Books")) {
+                condition = false;
+                break;
+            }
+            bookCounter ++;
+        }
+        if (searchBook.equals(searchedBook)) {
+            System.out.printf("You checked %d books and found it.", bookCounter);
+        } else {
+            System.out.printf("The book you search is not here!%n" +
+                    "You checked %d books.", bookCounter);
+        }
+    }
+}
