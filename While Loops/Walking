@@ -1,0 +1,25 @@
+package WhileLoop.Exercise;
+
+import java.util.Scanner;
+
+public class Walking {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int goal = 10_000, reached = 0;
+        String steps = "Null";
+        while (reached < goal) {
+            steps = input.nextLine();
+            if (steps.equals("Going home")){
+                reached += Integer.parseInt(input.nextLine());
+                break;
+            } else {
+                reached += Integer.parseInt(steps);
+            }
+        }
+        if (reached >= goal) {
+            System.out.printf("Goal reached! Good job!%n%d steps over the goal!", reached - goal);
+        } else {
+            System.out.printf("%d more steps to reach goal.", goal - reached);
+        }
+    }
+}
