@@ -1,0 +1,25 @@
+package WhileLoop.Exercise;
+
+import java.util.Scanner;
+
+public class Moving {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int w = Integer.parseInt(input.nextLine()), l = Integer.parseInt(input.nextLine()),
+                h = Integer.parseInt(input.nextLine());
+        int cubics = w * l * h, placedBoxes = 0;
+        String command = "command";
+        while (cubics >= placedBoxes) {
+            command = input.nextLine();
+            if (command.equals("Done")) {
+                break;
+            }
+            placedBoxes += Integer.parseInt(command);
+        }
+        if (cubics >= placedBoxes) {
+            System.out.printf("%d Cubic meters left.", cubics - placedBoxes);
+        } else
+            System.out.printf("No more free space! You need %d Cubic meters more.", placedBoxes - cubics);
+
+    }
+}
