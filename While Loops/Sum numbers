@@ -1,0 +1,17 @@
+package WhileLoop.Lab;
+
+import java.util.Scanner;
+
+public class SumNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = Integer.parseInt(input.nextLine());
+        int sum = 0;
+
+        while (sum < number){
+            int additional = Integer.parseInt(input.nextLine());
+            sum += additional;
+        }
+        System.out.println(sum);
+    }
+}
