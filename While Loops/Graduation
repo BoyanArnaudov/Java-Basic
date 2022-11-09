@@ -1,0 +1,27 @@
+package WhileLoop.Lab;
+
+import java.util.Scanner;
+
+public class YearGrade {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String name = input.nextLine();
+        int i = 1;
+        double totalGrade = 0;
+       while (i <= 12){
+           double yearGrade = Double.parseDouble(input.nextLine());
+           if (yearGrade < 4.00){
+               break;
+           }
+           totalGrade += yearGrade;
+           i++;
+       }
+       if (i <= 12)
+        System.out.printf("%s has been excluded at %d grade", name, i);
+       else {
+           double averageGrade = totalGrade / 12;
+           System.out.printf("%s graduated. Average grade: %.2f", name, averageGrade);
+       }
+
+    }
+}
