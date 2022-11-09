@@ -1,0 +1,24 @@
+package WhileLoop.Exercise;
+
+import java.util.Scanner;
+
+public class Cake {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int l = Integer.parseInt(input.nextLine()), w = Integer.parseInt(input.nextLine());
+        int pieces = l * w, neededPieces = 0;
+        String need = "null";
+        while (pieces >= neededPieces){
+            need = input.nextLine();
+            if (need.equals("STOP")){
+                break;
+            }
+            neededPieces += Integer.parseInt(need);
+        }
+        if (neededPieces <= pieces){
+            System.out.printf("%d pieces are left.", pieces - neededPieces);
+        } else {
+            System.out.printf("No more cake left! You need %d pieces more.",neededPieces-pieces);
+        }
+    }
+}
