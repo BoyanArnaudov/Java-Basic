@@ -1,0 +1,18 @@
+package WhileLoop.Lab;
+
+import java.util.Scanner;
+
+public class Text {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            String text = input.nextLine();
+
+            if (text.equals("Stop")){
+                break;
+            }
+            System.out.println(text);
+        }
+    }
+}
