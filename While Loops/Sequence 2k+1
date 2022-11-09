@@ -1,0 +1,17 @@
+package WhileLoop.Lab;
+
+import java.util.Scanner;
+
+public class Numbers2k1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int zadanie = Integer.parseInt(input.nextLine());
+        int sum = 1;
+
+        while (sum <= zadanie){
+            System.out.println(sum);
+            sum = sum * 2 +1;
+
+        }
+    }
+}
