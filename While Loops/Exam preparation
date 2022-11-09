@@ -1,0 +1,38 @@
+package WhileLoop.Exercise;
+
+import java.util.Scanner;
+
+public class ExamPreparation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int poorKnowledge = Integer.parseInt(input.nextLine()), grade = 0, sumGrade = 0, lowGrade = 0, counter = 0,
+                problems = 0;
+        boolean condition = true ;
+        String task = null, lastProblem = null;
+
+        while (condition) {
+            task = input.nextLine();
+            if (task.equals("Enough")){
+                break;
+            }
+            grade = Integer.parseInt(input.nextLine());
+            if (grade <= 4.00) {
+                lowGrade ++;
+            }
+            if (poorKnowledge == lowGrade){
+                break;
+            }
+            problems ++;
+            sumGrade += grade;
+            counter ++;
+            lastProblem = task;
+        }
+        double averageGrade = (double) sumGrade/ counter;
+        if (poorKnowledge == lowGrade){
+            System.out.printf("You need a break, %d poor grades.", poorKnowledge);
+        } else {
+            System.out.printf("Average score: %.2f%nNumber of problems: %d%nLast problem: %s", averageGrade, problems, lastProblem);
+        }
+
+    }
+}
