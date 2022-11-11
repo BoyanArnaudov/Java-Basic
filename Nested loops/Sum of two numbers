@@ -1,0 +1,43 @@
+package NestedLoops.Lab;
+
+import java.util.Scanner;
+
+public class sumOfTwoNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int i = Integer.parseInt(input.nextLine()), j = Integer.parseInt(input.nextLine()), k = Integer.parseInt(input.nextLine());
+        int counter = 0, c = 0, d = 0;
+        if (i < j){
+            for (int a = i; a <= j; a++){
+                for (int b = i; b <= j; b++){
+                    counter ++;
+                    c = a;
+                    d = b;
+                    if (a + b == k){
+                        System.out.printf("Combination N:%d (%d + %d = %d)", counter, a, b, k);
+                        a = j;
+                        b = j;
+                        break;
+                    }
+                }
+            }
+        } else {
+            for (int a = j; a <= i; a++){
+                for (int b = j; b <= i; b++){
+                    c = a;
+                    d = b;
+                    counter ++;
+                    if (a + b == k){
+                        System.out.printf("Combination N:%d (%d + %d = %d)", counter, a, b, k);
+                        a = i;
+                        b = i;
+                        break;
+                    }
+                }
+            }
+        }
+        if (c + d != k){
+            System.out.printf("%d combinations - neither equals %d", counter, k);
+        }
+    }
+}
