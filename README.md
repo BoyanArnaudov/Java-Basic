@@ -3,7 +3,7 @@ The "Programming Basics" course includes writing program code at an entry level 
 Skills that are acquired during this course:
 - Working with the console (data input and output)
 - Working with loops (for)
-- Working with more complex logic checks
+- Working with more complex logic checks (switch-case)
 - Working with logical checks (if-else)
 - Performing simple calculations
 - Working with more complex loops (nested for loops and while loops)
