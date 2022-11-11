@@ -1,0 +1,27 @@
+package NestedLoops.Lab;
+
+import java.util.Scanner;
+
+public class building {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int floors = Integer.parseInt(input.nextLine());
+        int apartmentsPerFloor = Integer.parseInt(input.nextLine());
+        int floorCounter = floors;
+        for (int i = 0; i < floors; i++){
+            floorCounter --;
+                for (int j = 0; j < apartmentsPerFloor; j++) {
+                    if (i == 0) {
+                        System.out.printf("L%d%d ", floors - i, j);
+                    } else {
+                        if (floorCounter % 2 != 0) {
+                            System.out.printf("O%d%d ", floors - i, j);
+                        } else {
+                            System.out.printf("A%d%d ", floors - i, j);
+                        }
+                    }
+                }
+            System.out.println();
+        }
+    }
+}
