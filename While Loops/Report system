@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class reportSystem {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int expectedCharity = Integer.parseInt(input.nextLine()), actualCharity = 0, counter = 0;
+        double naddavane = 0, averagePaymentWithCard = 0, averagePaymentWithCash = 0;
+        int cardCounter = 0, cashCounter = 0;
+        while (expectedCharity >= actualCharity){
+            String charity = input.nextLine();
+            if (charity.equals("End")){
+                break;
+            }
+            counter ++;
+            naddavane = Double.parseDouble(charity);
+            if (counter % 2 == 1) {
+                if (naddavane > 100){
+                    System.out.println("Error in transaction!");
+                } else {
+                    System.out.println("Product sold!");
+                    actualCharity += naddavane;
+                    averagePaymentWithCash += naddavane;
+                    cashCounter += 1;
+                }
+            } else {
+                if (naddavane < 10){
+                    System.out.println("Error in transaction!");
+                } else {
+                    System.out.println("Product sold!");
+                    actualCharity += naddavane;
+                    averagePaymentWithCard += naddavane;
+                    cardCounter += 1;
+                }
+            }
+        }
+        if (expectedCharity > actualCharity) {
+            System.out.println("Failed to collect required money for charity.");
+        } else {
+            System.out.printf("Average CS: %.2f%nAverage CC: %.2f", averagePaymentWithCash/cashCounter, averagePaymentWithCard/cardCounter);
+        }
+    }
+}
