@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class dishwasher {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int bottlesOfDetergent = Integer.parseInt(input.nextLine()), dishes = 0, count = 1, plates = 0, pots=0;
+        double totalDetergent = bottlesOfDetergent * 750;
+        double usedDetergent = 0;
+        String end = "SoftUni";
+        while (totalDetergent >= usedDetergent) {
+            end = input.nextLine();
+            if (end.equals("End")){
+                break;
+            }
+            dishes = Integer.parseInt(end);
+            if (count % 3 == 0){
+                usedDetergent += dishes * 15;
+                pots += dishes;
+            } else {
+                usedDetergent += dishes * 5;
+                plates += dishes;
+            }
+            count ++;
+        }
+        if (totalDetergent >= usedDetergent) {
+            System.out.printf("Detergent was enough!%n%d dishes and %d pots were washed.%nLeftover detergent %.0f ml.", plates, pots, totalDetergent-usedDetergent);
+        } else
+            System.out.printf("Not enough detergent, %.0f ml. more necessary!", usedDetergent - totalDetergent);
+    }
+}
