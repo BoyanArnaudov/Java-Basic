@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class averageNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int count = Integer.parseInt(input.nextLine());
+        double averageNumber = 0;
+        for (int i = 1; i <= count; i++){
+            averageNumber += Double.parseDouble(input.nextLine());
+        }
+        System.out.printf("%.2f", averageNumber / count);
+    }
+}
