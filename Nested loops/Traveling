@@ -1,0 +1,36 @@
+package NestedLoops.Lab;
+
+import java.util.Scanner;
+
+public class traveling {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        boolean condition = true;
+        boolean condition1 = true;
+        String destination = "null", money = "null";
+        double neededMoney = 1, investedMoney = 0;
+        while (condition) {
+            destination = input.nextLine();
+            if (destination.equals("End")){
+                condition = false;
+                break;
+            } else {
+                money = input.nextLine();
+                neededMoney = Double.parseDouble(money);
+                while (neededMoney > investedMoney) {
+                    money = input.nextLine();
+                    if (money.equals("End")){
+                        condition1 = false;
+                        condition = false;
+                        break;
+                    }
+                    investedMoney += Double.parseDouble(money);
+                }
+                if (neededMoney <= investedMoney) {
+                    System.out.printf("Going to %s!%n", destination);
+                }
+                investedMoney = 0;
+            }
+        }
+    }
+}
