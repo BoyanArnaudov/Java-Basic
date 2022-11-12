@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class cinemaTickets {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        boolean isTrue = true;
+        double studentTickets = 0, standartTickets = 0, kidTickets = 0;
+        int totalTickets = 0;
+        while (isTrue) {
+            int capacity = 0;
+            double usedCapacity = 0;
+            String filmName = input.nextLine();
+            if (filmName.equals("Finish")){
+                isTrue = false;
+                break;
+            } else {
+                capacity = Integer.parseInt(input.nextLine());
+                    for (int i = 1; i <= capacity ; i++) {
+                        String type = input.nextLine();
+                        if (type.equals("End")){
+                            i = capacity;
+                            break;
+                        } else {
+                            switch (type){
+                                case "standard":
+                                    standartTickets++;
+                                    totalTickets++;
+                                    usedCapacity++;
+                                    break;
+                                case "student":
+                                    studentTickets++;
+                                    totalTickets++;
+                                    usedCapacity++;
+                                    break;
+                                case "kid":
+                                    kidTickets++;
+                                    totalTickets++;
+                                    usedCapacity++;
+                                    break;
+                            }
+                        }
+                    }
+                }
+            System.out.printf("%s - %.2f%% full.%n", filmName, (usedCapacity / capacity * 100));
+            }
+            System.out.printf("Total tickets: %d%n%.2f%% student tickets.%n%.2f%% standard tickets.%n%.2f%% kids tickets.", totalTickets,
+                    studentTickets/totalTickets * 100, standartTickets/totalTickets * 100, kidTickets/totalTickets * 100);
+        }
+    }
