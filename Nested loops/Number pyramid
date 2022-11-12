@@ -1,5 +1,3 @@
-package NestedLoops.Exercise;
-
 import java.util.Scanner;
 
 public class numberPyramid {
