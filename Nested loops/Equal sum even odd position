@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class equalSumEvenOddPosition {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int firstNum = Integer.parseInt(input.nextLine());
+        int secondNum = Integer.parseInt(input.nextLine());
+        for (int i = firstNum; i <= secondNum; i++) {
+            int evenSum = 0;
+            int oddSum = 0;
+            int currentNum = i;
+            for (int j = 6; j >= 1; j--){
+                int currentDigit = currentNum % 10;
+                if (j % 2 == 0){
+                    evenSum += currentDigit;
+                } else {
+                    oddSum += currentDigit;
+                }
+                currentNum /= 10;
+            }
+            if (evenSum == oddSum){
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
