@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class trainTheTrainers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int trainers = Integer.parseInt(input.nextLine());
+        boolean isTrue = true;
+        double finalAssessment = 0;
+        int exams = 0;
+        while (isTrue){
+            String object = input.nextLine();
+            double assessment = 0;
+            if (object.equals("Finish")){
+                isTrue = false;
+                break;
+            }
+            for (int i = 1; i <= trainers; i++){
+                assessment += Double.parseDouble(input.nextLine());
+            }
+            finalAssessment += (assessment / trainers);
+            exams ++;
+            System.out.printf("%s - %.2f.%n", object, assessment / trainers);
+        }
+        finalAssessment /= exams;
+        System.out.printf("Student's final assessment is %.2f.", finalAssessment);
+    }
+}
