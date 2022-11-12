@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class sumPrimeNonPrime {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        boolean isTrue = true, prime = true;
+        int primeSum = 0, nonPrimeSum = 0, check = 0;
+        while (isTrue) {
+            prime = true;
+            String command = input.nextLine();
+            if (command.equals("stop")){
+                isTrue = false;
+                break;
+            }
+            int number = Integer.parseInt(command);
+            if (number < 0){
+                System.out.println("Number is negative.");
+            } else {
+                for (int i = 2; i < number; i++) {
+                    if (number % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime) {
+                    primeSum += number;
+                } else {
+                    nonPrimeSum += number;
+                }
+            }
+        }
+        System.out.println("Sum of all prime numbers is: " + primeSum);
+        System.out.println("Sum of all non prime numbers is: " + nonPrimeSum);
+    }
+}
