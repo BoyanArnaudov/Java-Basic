@@ -1,0 +1,26 @@
+package NestedLoops.Exercise;
+
+import java.util.Scanner;
+
+public class numberPyramid {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pyramid = Integer.parseInt(input.nextLine());
+        int currentNumber = 1;
+        boolean isFinish = false;
+        for (int rows = 1; rows <= pyramid; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
+                if (currentNumber > pyramid){
+                    isFinish = true;
+                    break;
+                }
+                System.out.printf("%d ", currentNumber);
+                currentNumber ++;
+            }
+            if (isFinish){
+                break;
+            }
+            System.out.println();
+        }
+    }
+}
