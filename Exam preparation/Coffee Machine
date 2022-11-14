@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class CoffeeMachine {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String drink = input.nextLine();
+        String sugar = input.nextLine();
+        int totalDrinks = Integer.parseInt(input.nextLine());
+        double drinkPrice = 0;
+        switch (drink){
+            case "Espresso": if (sugar.equals("Without")) {
+                drinkPrice = 0.9;
+            } else if (sugar.equals("Normal")) {
+                drinkPrice = 1;
+            } else if (sugar.equals("Extra")){
+                drinkPrice = 1.2;
+            } break;
+            case "Cappuccino": if (sugar.equals("Without")) {
+                drinkPrice = 1;
+            } else if (sugar.equals("Normal")) {
+                drinkPrice = 1.2;
+            } else if (sugar.equals("Extra")){
+                drinkPrice = 1.6;
+            } break;
+            case "Tea": if (sugar.equals("Without")) {
+                drinkPrice = 0.5;
+            } else if (sugar.equals("Normal")) {
+                drinkPrice = 0.6;
+            } else if (sugar.equals("Extra")){
+                drinkPrice = 0.7;
+            } break;
+        }
+        double totalPrice = totalDrinks * drinkPrice;
+        if (sugar.equals("Without")){
+            totalPrice *= 0.65;
+        }
+        if (drink.equals("Espresso") && totalDrinks >= 5){
+            totalPrice *= 0.75;
+        }
+        if (totalPrice > 15){
+            totalPrice *= 0.8;
+        }
+
+
+        System.out.printf("You bought %d cups of %s for %.2f lv.", totalDrinks, drink, totalPrice);
+    }
+}
