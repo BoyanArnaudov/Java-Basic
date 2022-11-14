@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Balls {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int balls = Integer.parseInt(input.nextLine());
+        int otherColorsPicked = 0, dividedByBlack = 0;
+        int red = 0, orange = 0, yellow = 0, white = 0;
+        int points = 0;
+        for (int i = 0; i < balls; i++){
+            String colors = input.nextLine();
+            if (colors.equals("red")){
+                points += 5;
+                red ++;
+            } else if (colors.equals("orange")){
+                points += 10;
+                orange ++;
+            } else if (colors.equals("yellow")){
+                points += 15;
+                yellow ++;
+            } else if (colors.equals("white")){
+                points += 20;
+                white ++;
+            } else if (colors.equals("black")) {
+                points /= 2;
+                dividedByBlack ++;
+            } else {
+                otherColorsPicked ++;
+            }
+        }
+        System.out.printf("Total points: %d%nRed balls: %d%nOrange balls: %d%nYellow balls: %d%nWhite balls: %d%n" +
+                "Other colors picked: %d%nDivides from black balls: %d", points, red, orange, yellow, white,
+                otherColorsPicked, dividedByBlack);
+    }
+}
