@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class TravelAgency {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String destination = input.nextLine();
+        String packet = input.nextLine();
+        String vIPOrNo = input.nextLine();
+        int daysVacation = Integer.parseInt(input.nextLine());
+        double totalMoneyNeeded = 0, pricePerDay = 0;
+        if (daysVacation > 7) {
+            daysVacation -= 1;
+        }
+        if (daysVacation < 1){
+            System.out.println("Days must be positive number!");
+        } else {
+            if (destination.equals("Bansko") || destination.equals("Borovets")) {
+                if (packet.equals("withEquipment")) {
+                    pricePerDay = 100;
+                    if (vIPOrNo.equals("yes")) {
+                        pricePerDay *= 0.9;
+                    }
+                } else if (packet.equals("noEquipment")) {
+                    pricePerDay = 80;
+                    if (vIPOrNo.equals("yes")) {
+                        pricePerDay *= 0.95;
+                    }
+                }
+                totalMoneyNeeded = daysVacation * pricePerDay;
+                System.out.printf("The price is %.2flv! Have a nice time!", totalMoneyNeeded);
+            } else if (destination.equals("Varna") || destination.equals("Burgas")) {
+                if (packet.equals("withBreakfast")) {
+                    pricePerDay = 130;
+                    if (vIPOrNo.equals("yes")) {
+                        pricePerDay *= 0.88;
+                    }
+                } else if (packet.equals("noBreakfast")) {
+                    pricePerDay = 100;
+                    if (vIPOrNo.equals("yes")) {
+                        pricePerDay *= 0.93;
+                    }
+                }
+                totalMoneyNeeded = daysVacation * pricePerDay;
+                System.out.printf("The price is %.2flv! Have a nice time!", totalMoneyNeeded);
+            } else {
+                System.out.println("Invalid input!");
+            }
+        }
+
+
+    }
+}
