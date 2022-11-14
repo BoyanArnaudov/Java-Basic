@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Renovation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int wallHeigh = Integer.parseInt(input.nextLine());
+        int wallWidth = Integer.parseInt(input.nextLine());
+        int percentNoPainting = Integer.parseInt(input.nextLine());
+        double area = (wallHeigh * wallWidth) * 4;
+        double areaForPainting = Math.ceil(area - (area * percentNoPainting / 100));
+        boolean isTrue = true;
+        while (true){
+            String paint = input.nextLine();
+            if (paint.equals("Tired!")){
+                isTrue = false;
+                break;
+            }
+            int paintUsed = Integer.parseInt(paint);
+            areaForPainting -= paintUsed;
+            if (0 >= areaForPainting) {
+                isTrue = false;
+                break;
+            }
+        }
+        if (0 > areaForPainting) {
+            System.out.printf("All walls are painted and you have %.0f l paint left!", Math.abs(areaForPainting));
+        } else if (0 == areaForPainting) {
+            System.out.print("All walls are painted! Great job, Pesho!");
+        } else {
+            System.out.printf("%.0f quadratic m left.", areaForPainting);
+        }
+    }
+}
