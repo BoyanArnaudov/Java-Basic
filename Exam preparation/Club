@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Club {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double wishedProfitClub = Double.parseDouble(input.nextLine());
+        String coctail = "null";
+        double profit = 0;
+        int coctailprice = 0;
+        boolean isTrue = true;
+        while (isTrue){
+        coctail = input.nextLine();
+        if (coctail.equals("Party!")){
+            break;
+        }
+        int coctailCount = Integer.parseInt(input.nextLine());
+        coctailprice = coctail.length() * coctailCount;
+        if (coctailprice % 2 == 0){
+            profit += (coctail.length() * coctailCount);
+        } else {
+            profit += (coctailprice*0.75);
+        }
+        if (wishedProfitClub <= profit){
+            isTrue = false;
+        }
+        }
+        if (wishedProfitClub <= profit){
+            System.out.printf("Target acquired.%nClub income - %.2f leva.", profit);
+        } else {
+            System.out.printf("We need %.2f leva more.%nClub income - %.2f leva.", wishedProfitClub - profit, profit);
+        }
+
+    }
+}
