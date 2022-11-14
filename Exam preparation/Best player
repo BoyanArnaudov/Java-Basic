@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class BestPlayer {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int mostGoals = Integer.MIN_VALUE;
+        String bestPlayer = "null", player = "null";
+        while (!player.equals("END")){
+            player = input.nextLine();
+            if (player.equals("END")){
+                break;
+            }
+            int goals = Integer.parseInt(input.nextLine());
+            if (goals > mostGoals) {
+                mostGoals = goals;
+                bestPlayer = player;
+            }
+            if (goals >= 10){
+                player = "END";
+            }
+        } if (mostGoals >= 3){
+            System.out.printf("%s is the best player!%nHe has scored %d goals and made a hat-trick !!!", bestPlayer, mostGoals);
+        } else {
+            System.out.printf("%s is the best player!%nHe has scored %d goals.", bestPlayer, mostGoals);
+        }
+    }
+}
