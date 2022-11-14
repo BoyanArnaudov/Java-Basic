@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TheMostPowerfulWord {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        boolean isTrue = true;
+        String powerful = "null";
+        int points = Integer.MIN_VALUE, current = 0;
+        while (isTrue){
+            String innput = input.nextLine();
+            if (innput.equals("End of words")){
+                isTrue = false;
+                break;
+            }
+            for (int i = 0; i < innput.length(); i++) {
+                char check = innput.charAt(i);
+                current += (int) check;
+            }
+            switch (innput.charAt(0)){
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                case 'y':
+                case 'Y':
+                case 'i':
+                case 'I': current *= innput.length();
+            }
+            if (current >= points) {
+                powerful = innput;
+                points = current;
+            }
+            current = 0;
+        }
+        System.out.printf("The most powerful word is %s - %d", powerful, points);
+    }
+}
