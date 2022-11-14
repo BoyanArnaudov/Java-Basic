@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class NameGame {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int points = 0, currentPoints = 0, checkpoints = 0, winningPoints = Integer.MIN_VALUE;
+        String winner = "null";
+        boolean game = true;
+        while (game){
+            points = 0;
+            String name = input.nextLine();
+            if (name.equals("Stop")){
+                game = false;
+                break;
+            }
+            for (int i = 0; i < name.length(); i++){
+                char check = name.charAt(i);
+                String point = input.nextLine();
+                if (point.equals("Stop")){
+                    game = false;
+                    break;
+                }
+                currentPoints = Integer.parseInt(point);
+                checkpoints = (int) check;
+                if (checkpoints == currentPoints) {
+                    points += 10;
+                }
+                if (checkpoints != currentPoints) {
+                    points += 2;
+                }
+                if (points >= winningPoints){
+                    winner = name;
+                    winningPoints = points;
+                }
+            }
+        }
+        System.out.printf("The winner is %s with %d points!", winner, winningPoints);
+    }
+}
