@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class AgencyProfit {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String nameAviocompany = input.nextLine();
+        int ticketsForAdults = Integer.parseInt(input.nextLine()), ticketsForChildren = Integer.parseInt(input.nextLine());
+        double ticketPrice = Double.parseDouble(input.nextLine());
+        double taxMaintenance = Double.parseDouble(input.nextLine());
+        double finalPrice = (ticketPrice * ticketsForAdults) + (ticketsForChildren * (ticketPrice * 0.3)) + ((ticketsForChildren+ticketsForAdults) * taxMaintenance );
+        System.out.printf("The profit of your agency from %s tickets is %.2f lv.", nameAviocompany, finalPrice * 0.2);
+    }
+}
