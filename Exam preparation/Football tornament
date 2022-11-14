@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class FootballTornament {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String teamName = input.nextLine();
+        int playedGames = Integer.parseInt(input.nextLine());
+        int points = 0, wins = 0, draws = 0, loses = 0;
+        for (int i = 0; i < playedGames; i ++){
+            String stat = input.nextLine();
+            switch (stat) {
+                case "W" : points += 3;
+                    wins ++;
+                    break;
+                case "D" : points += 1;
+                    draws ++;
+                    break;
+                case "L" : loses ++;
+                    break;
+            }
+        }
+        double win = wins;
+        double winrate = (win / playedGames) * 100;
+        if (playedGames < 1) {
+            System.out.printf("%s hasn't played any games during this season.", teamName);
+        } else  {
+            System.out.printf("%s has won %d points during this season.%nTotal stats:%n## W: %d%n## D: %d%n## L: %d%nWin rate: %.2f%%",
+                    teamName, points, wins, draws, loses, winrate);
+        }
+    }
+}
