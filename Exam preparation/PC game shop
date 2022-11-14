@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class pcGameShop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int totalGames = Integer.parseInt(input.nextLine());
+        int hearthstone = 0, fortnite = 0, overwatch = 0, others = 0;
+        for (int i = 0; i < totalGames; i++) {
+            String game = input.nextLine();
+            switch (game){
+                case "Hearthstone": hearthstone ++;
+                    break;
+                case "Fornite": fortnite++;
+                    break;
+                case "Overwatch": overwatch++;
+                    break;
+                default: others++;
+            }
+        }
+        double total = totalGames;
+        System.out.printf("Hearthstone - %.2f%%%nFornite - %.2f%%%nOverwatch - %.2f%%%nOthers - %.2f%%%n", (hearthstone/total * 100),
+                (fortnite/total * 100), (overwatch/total * 100), (others/total * 100));
+    }
+}
