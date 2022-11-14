@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class AddBags {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double priceForMore20kg = Double.parseDouble(input.nextLine());
+        double baggageKg = Double.parseDouble(input.nextLine());
+        int daysTillTravel = Integer.parseInt(input.nextLine());
+        int baggageCount = Integer.parseInt(input.nextLine());
+        if (baggageKg < 10) {
+            priceForMore20kg *= 0.2;
+        }
+        if (baggageKg >= 10 && baggageKg <= 20) {
+            priceForMore20kg *= 0.5;
+        }
+
+        if (daysTillTravel < 7) {
+            priceForMore20kg *= 1.4;
+        } else if (daysTillTravel >= 7 && daysTillTravel <= 30){
+            priceForMore20kg *= 1.15;
+        } else {
+            priceForMore20kg *= 1.1;
+        }
+        System.out.printf("The total price of bags is: %.2f lv.", priceForMore20kg * baggageCount);
+}
+}
