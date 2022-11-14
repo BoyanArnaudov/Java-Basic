@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class BarcodeGenerator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int start = Integer.parseInt(input.nextLine());
+        int stop = Integer.parseInt(input.nextLine());
+        int firstStart = start / 1000;
+        int secondStart = (start / 100) % 10;
+        int thirdStart = (start / 10) % 10;
+        int forthStart = start % 10;
+        int firstStop = stop / 1000;
+        int secondStop = (stop / 100) % 10;
+        int thirdStop = (stop / 10) % 10;
+        int forthStop = stop % 10;
+        for (int i = firstStart; i <= firstStop; i ++){
+            for (int j = secondStart; j <= secondStop; j++){
+                for (int k = thirdStart; k <= thirdStop; k++) {
+                    for (int l = forthStart; l <= forthStop; l++) {
+                        if (i % 2 != 0 && j % 2 != 0 && k % 2 !=0 && l % 2 != 0){
+                            System.out.printf("%d%d%d%d ", i, j, k, l);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
