@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FamilyTrip {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        int nights = Integer.parseInt(input.nextLine());
+        double pricePerNight = Double.parseDouble(input.nextLine());
+        double additionalExpences = Double.parseDouble(input.nextLine());
+        if (nights > 7){
+            pricePerNight *= 0.95;
+        }
+        double totalSpend = nights * pricePerNight + (budget * additionalExpences / 100);
+        if (totalSpend <= budget){
+            System.out.printf("Ivanovi will be left with %.2f leva after vacation.", budget - totalSpend);
+        } else {
+            System.out.printf("%.2f leva needed.", Math.abs(totalSpend - budget));
+        }
+
+    }
+}
