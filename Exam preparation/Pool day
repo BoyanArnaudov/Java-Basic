@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class PoolDay {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int people = Integer.parseInt(input.nextLine());
+        double tax = Double.parseDouble(input.nextLine());
+        double priceShezlong = Double.parseDouble(input.nextLine());
+        double priceUmrella = Double.parseDouble(input.nextLine());
+        double peopleForShezlong = Math.ceil(people*0.75);
+        double peopleForUmbrella = Math.ceil(people*0.5);
+        double totalPrice = (people*tax) + (peopleForUmbrella * priceUmrella) + (peopleForShezlong * priceShezlong);
+        System.out.printf("%.2f lv.", totalPrice);
+    }
+}
