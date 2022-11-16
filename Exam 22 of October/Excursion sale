@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class ExcursionSale {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int seaExcursion = Integer.parseInt(input.nextLine());
+        int montainExcursion = Integer.parseInt(input.nextLine());
+        boolean isTrue = true;
+        int counterSea = 0, counterMontain = 0, totalMoney = 0;
+        while (isTrue) {
+            String place = input.nextLine();
+            if (place.equals("Stop")){
+                isTrue = false;
+                break;
+            } else if (place.equals("sea")) {
+                if (seaExcursion != counterSea) {
+                    counterSea += 1;
+                    totalMoney += 680;
+                }
+            } else if (place.equals("mountain")) {
+                if (montainExcursion != counterMontain) {
+                    counterMontain += 1;
+                    totalMoney += 499;
+                }
+            }
+            if (counterSea == seaExcursion && counterMontain == montainExcursion){
+                isTrue = false;
+                break;
+            }
+        }
+        if (counterSea == seaExcursion && counterMontain == montainExcursion){
+            System.out.println("Good job! Everything is sold.");
+        }
+        System.out.printf("Profit: %d leva.", totalMoney);
+    }
+}
