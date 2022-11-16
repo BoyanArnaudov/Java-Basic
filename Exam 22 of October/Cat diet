@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class CatDiet {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int fatPercent = Integer.parseInt(input.nextLine());
+        int proteinPercent = Integer.parseInt(input.nextLine());
+        int carbPercent = Integer.parseInt(input.nextLine());
+        int totalCalories = Integer.parseInt(input.nextLine());
+        int waterPercent = Integer.parseInt(input.nextLine());
+        double fatGrams = (((double)fatPercent/100) * totalCalories) / 9;
+        double proteinGrams = (((double) proteinPercent/100) * totalCalories) / 4;
+        double carbGrams = (((double) carbPercent / 100) * totalCalories) / 4;
+        double totalCalWithWater = totalCalories / (fatGrams + proteinGrams + carbGrams);
+        double totalCal = totalCalWithWater * ((100 - (double) waterPercent) / 100);
+        System.out.printf("%.4f%n", totalCal);
+    }
+}
